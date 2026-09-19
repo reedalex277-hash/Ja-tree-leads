@@ -1,6 +1,22 @@
 import streamlit as st
 import pandas as pd
 import requests
+from streamlit.components.v1 import html
+
+# Inject Vercel Speed Insights tracking
+def inject_speed_insights():
+    speed_insights_html = """
+    <script>
+      window.si = window.si || function () { 
+        (window.siq = window.siq || []).push(arguments); 
+      };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    """
+    html(speed_insights_html)
+
+# Initialize Speed Insights
+inject_speed_insights()
 
 st.title("J&A Local B2B Lead Hunter")
 
