@@ -2,6 +2,14 @@ import streamlit as st
 import pandas as pd
 import requests
 
+# Inject Vercel Web Analytics script
+st.html(
+    """
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    """,
+    unsafe_allow_javascript=True
+)
+
 st.title("J&A Local B2B Lead Hunter")
 
 # 1. Your target service region
