@@ -1,0 +1,22 @@
+<script>
+  // Vercel Speed Insights tracking script
+  // This script tracks Web Vitals metrics and sends them to Vercel Speed Insights
+  
+  (function() {
+    // Initialize Speed Insights queue
+    window.si = window.si || function () { 
+      (window.siq = window.siq || []).push(arguments); 
+    };
+    
+    // Load the Speed Insights script from CDN
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = 'https://va.vercel-scripts.com/v1/speed-insights/script.js';
+    
+    // Add data attributes for configuration
+    // The script will automatically detect VERCEL_ANALYTICS_ID from environment
+    script.setAttribute('data-endpoint', 'https://vitals.vercel-analytics.com/v1/vitals');
+    
+    document.head.appendChild(script);
+  })();
+</script>

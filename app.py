@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 import requests
+from streamlit.components.v1 import html
+
+# Load Vercel Speed Insights tracking
+with open("speed_insights.html") as f:
+    speed_insights_html = f.read()
+    html(speed_insights_html, height=0)
 
 st.title("J&A Local B2B Lead Hunter")
 
